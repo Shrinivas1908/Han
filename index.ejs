@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIY Hardware Hub - Retailers</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Retailers</h1>
+</header>
+
+<section class="retailer-list">
+  <% if (retailers.length === 0) { %>
+    <p>No retailers found.</p>
+  <% } else { %>
+    <ul>
+      <% retailers.forEach(r => { %>
+        <li class="retailer-card">
+          <h2><%= r.name %></h2>
+          <p><strong>City:</strong> <%= r.city %></p>
+          <p><strong>Address:</strong> <%= r.address %></p>
+          <p><strong>Phone:</strong> <%= r.phone %></p>
+          <p><strong>Email:</strong> <a href="mailto:<%= r.email %>"><%= r.email %></a></p>
+          <p><strong>Website:</strong> <a href="<%= r.website %>" target="_blank"><%= r.website %></a></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</section>
+
+</body>
+</html>
